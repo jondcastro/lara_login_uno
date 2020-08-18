@@ -24,7 +24,9 @@ php artisan make:model Flight -m
 
 */
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index');
+
+Route::get('/home', 'HomeController@index');
 
 Auth::routes();
 
