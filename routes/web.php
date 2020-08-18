@@ -17,12 +17,15 @@ php artisan make:migration create_users_table --create=users
 
 php artisan make:migration add_votes_to_users_table --table=users
 
+
+php artisan make:controller UserController -r
+
+php artisan make:model Flight -m
+
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');

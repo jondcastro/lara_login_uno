@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             //colocar unsigned para que deje relacionar tabla en mysql
-            $table->bigInteger('role_id')->unsigned();;
+            $table->bigInteger('role_id')->unsigned()->default('2');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
