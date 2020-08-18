@@ -11,6 +11,18 @@
 |
 */
 
+/*
+comandos recurrentes a utilizar
+php artisan make:migration create_users_table --create=users
+
+php artisan make:migration add_votes_to_users_table --table=users
+
+*/
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
