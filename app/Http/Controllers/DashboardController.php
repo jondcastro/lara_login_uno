@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+// use App\Http\Middleware\RedirectIfAuthenticated;
+
 class DashboardController extends Controller
 {
     /**
@@ -13,7 +15,14 @@ class DashboardController extends Controller
      */
     public function __construct()
     {
+        // si estoy autenticado tengo acceso
         $this->middleware('auth');
+
+        //si no estoy autenticado me redirecciona
+        // $this->middleware('guest');
+
+        // primero agregarlo en el kernel.php
+        // $this->middleware('test');
     }
 
     /**

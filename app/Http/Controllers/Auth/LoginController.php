@@ -51,7 +51,7 @@ class LoginController extends Controller
     {
         //
 
-        print_r($request);
+        return $user;
     }
 
 

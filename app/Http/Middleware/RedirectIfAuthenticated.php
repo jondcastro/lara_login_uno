@@ -17,10 +17,17 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
+        //si no estoy autenticado me redirecciona
         if (Auth::guard($guard)->check()) {
             return redirect('/home');
+
+            // return redirect('/algo');
+
+            // return 'puto';
         }
 
         return $next($request);
+
+        // return 'pu';
     }
 }
