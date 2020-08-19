@@ -13,7 +13,11 @@ use Illuminate\Http\Request;
 
 // use Illuminate\Support\Facades\Auth;
 
-// use App\User; 
+// use App\User;
+
+
+// importar para podder trabajar con el Auth
+use Illuminate\Support\Facades\Auth; 
 
 class LoginController extends Controller
 {
@@ -35,7 +39,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/dashboard';
+    protected $redirectTo = '/admin/dashboard';
 
     /**
      * Create a new controller instance.
@@ -66,6 +70,30 @@ class LoginController extends Controller
         // if (Auth::users()) {
         //     # code...
         // }
+
+        if (Auth::user()->role_id === 1) {
+
+            // dd(Auth::user()->role_id);
+
+            // dd($next($request));
+
+
+            // next($request)
+
+            // return route('dashboard');        
+
+            return redirect('/admin/dashboard');
+
+            // exit;
+
+        }else{
+
+            return redirect('/user/dashboard');
+
+
+
+        }
+
     }
 
     // public function username()

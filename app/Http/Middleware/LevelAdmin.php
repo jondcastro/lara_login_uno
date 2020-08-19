@@ -6,7 +6,7 @@ use Closure;
 // importar para podder trabajar con el Auth
 use Illuminate\Support\Facades\Auth;
 
-class LevelAccess
+class LevelAdmin
 {
     /**
      * Handle an incoming request.
@@ -41,6 +41,66 @@ class LevelAccess
         // dd(Auth::user()->role_id);
 
 
+        // if (Auth::user()->role_id === 1) {
+
+        //     // dd(Auth::user()->role_id);
+
+        //     // dd($next($request));
+
+
+        //     // next($request)
+
+        //     // return route('dashboard');        
+
+        //     return redirect('/panel');
+
+        //     // exit;
+
+        // }
+
+
+        if (!Auth::user()->role_id === 1) {
+
+            // dd(Auth::user()->role_id);
+
+            // dd($next($request));
+
+
+            // next($request)
+
+            // return route('dashboard');        
+
+            return redirect('/');
+
+            // exit;
+
+        }
+
+
+        // if (!Auth::user()->role_id === 1) {
+
+        //     // dd(Auth::user()->role_id);
+
+        //     // dd($next($request));
+
+
+        //     // next($request)
+
+        //     // return route('dashboard');        
+
+        //     return redirect('/home');
+
+        //     // exit;
+
+        // }else{
+
+        //     return redirect('/user/dashboard');
+
+
+
+        // }
+
+
         // if (Auth::user()->role_id === 2) {
 
         //     // dd(Auth::user()->role_id);
@@ -52,14 +112,23 @@ class LevelAccess
 
         //     // return route('dashboard');        
 
-        //     // return redirect('/panel');
+        //     return redirect('/user/dashboard');
 
         //     // exit;
 
-        // }else{
-
-        //     return route('panel');
         // }
+
+
+
+
+
+
+        // else{
+
+        //     return redirect('/user/dashboard');
+
+        // }
+
 
         //  if (Auth::user()->role_id === 2) {
 
@@ -69,7 +138,9 @@ class LevelAccess
 
         // }
 
-        // return $next($request);
+        // estoy es necesario por que si esta vacion hay un error de token
+
+        return $next($request);
 
         // return 'pu';
     }

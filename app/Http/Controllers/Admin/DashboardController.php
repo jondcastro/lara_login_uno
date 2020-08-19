@@ -25,7 +25,10 @@ class DashboardController extends Controller
         // si estoy autenticado tengo acceso
         // $this->middleware('auth');
 
-        // $this->middleware('level.access');
+        $this->middleware('level.admin');
+
+         // si estoy autenticado tengo acceso
+        $this->middleware('auth');
 
         //si no estoy autenticado me redirecciona
         // $this->middleware('guest');
