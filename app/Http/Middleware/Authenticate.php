@@ -12,6 +12,8 @@ class Authenticate extends Middleware
      * @param  \Illuminate\Http\Request  $request
      * @return string
      */
+
+    // si estoy autenticado tengo acceso
     protected function redirectTo($request)
     {
         if (! $request->expectsJson()) {

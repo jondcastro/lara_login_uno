@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
+
+use App\Http\Controllers\Controller;
 
 // use App\Http\Middleware\RedirectIfAuthenticated;
 
@@ -18,6 +20,8 @@ class DashboardController extends Controller
         // si estoy autenticado tengo acceso
         $this->middleware('auth');
 
+        // $this->middleware('level.access');
+
         //si no estoy autenticado me redirecciona
         // $this->middleware('guest');
 
@@ -32,6 +36,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        return view('user.dashboard');
     }
+
 }

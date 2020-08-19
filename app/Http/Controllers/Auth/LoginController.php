@@ -7,6 +7,14 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use Illuminate\Http\Request; 
 
+// use App\Http\Controllers\Auth\Auth;
+
+// use Illuminate\Auth\Middleware\Authenticate as Middleware;
+
+// use Illuminate\Support\Facades\Auth;
+
+// use App\User; 
+
 class LoginController extends Controller
 {
     /*
@@ -47,12 +55,39 @@ class LoginController extends Controller
      * @param  mixed  $user
      * @return mixed
      */
-    protected function authenticated(Request $request, $user)
-    {
+     protected function authenticated(Request $request, $user)
+     {
         //
 
-        return $user;
+        // return $user;
+
+        // return Auth::users();
+
+        // if (Auth::users()) {
+        //     # code...
+        // }
     }
+
+    // public function username()
+    // {
+    //     return ['email','role_id'];
+    // }
+
+
+    /**
+     * Get the path the user should be redirected to when they are not authenticated.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return string
+     */
+    // protected function redirectTo($request)
+    // {
+    //     if (! $request->expectsJson()) {
+    //         return route('panel');
+    //     }
+
+    //     // return 'puto';
+    // }
 
 
      /**
@@ -65,4 +100,4 @@ class LoginController extends Controller
     //  {
     //     return view('auth.login');
     // }
-}
+ }

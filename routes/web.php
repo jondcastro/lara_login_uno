@@ -30,4 +30,10 @@ Route::get('/home', 'HomeController@index');
 
 Auth::routes();
 
-Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+// Route::get('/dashboard', 'DashboardController@index');
+// el name es para que aparesca en las rutas con route:list
+Route::get('/dashboard', 'Admin\DashboardController@index')->name('dashboard');
+
+
+// Route::get('/panel', 'DashboardController@users');
+Route::get('/panel', 'User\DashboardController@index')->name('panel');
